@@ -35,7 +35,9 @@ io.on('connection', function (socket) {
 
 var pool = new Pool({
   connectionString: `postgres://${db_username}:${db_password}@${db_host}/${db}`,
-  ssl: { rejectUnauthorized: false }
+  ssl: ['require', 'verify-ca', 'verify-full'].includes(process.env.DB_SSL_MODE)
+    ? { rejectUnauthorized: false }
+    : false
 });
 
 async.retry(
