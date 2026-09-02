@@ -2,7 +2,7 @@ FROM node:22-slim
 
 # add curl for healthcheck.
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl=7.88.1-10+deb12u15 tini && \
+    apt-get install -y --no-install-recommends curl=7.88.1-10+deb12u15 tini=0.19.0-1+b3 && \
     rm -rf /var/lib/apt/lists/*
 
 # Set the application directory
