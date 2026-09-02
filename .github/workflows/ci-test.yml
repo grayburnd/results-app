@@ -3,10 +3,10 @@ name: CI [Test] (Callable ONLY)
 on:
 
   workflow_call:
-    inputs:
-      uv-version:
-        required: true
-        type: string
+    # inputs:
+    #   uv-version:
+    #     required: true
+    #     type: string
 
 env:
   AWS_REGION: us-east-1
