@@ -1,6 +1,6 @@
 FROM node:22-slim
 
-# add curl for healthcheck
+# add curl for healthcheck.
 RUN apt update && \
     apt install -y --no-install-recommends curl=7.88.1-10+deb12u15 tini && \
     rm -rf /var/lib/apt/lists/*
