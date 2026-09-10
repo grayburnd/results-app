@@ -13,7 +13,7 @@ The service reads `DB_HOST`, `DB_PORT`, `DB_USERNAME`, `DB_PASSWORD`, `DB` and `
 - A production-oriented Docker image that runs as a non-root user.
 - An Updatecli configuration for proposing image-tag changes in the GitOps repository.
 
-This repository contains the results component only. Vote submission, database provisioning, Kubernetes manifests and the wider AWS EKS platform are maintained elsewhere. The wider platform project documents the surrounding application and delivery workflow in its [application guide](https://github.com/YOUR_GITHUB_ORG/aws-eks-gitops-argocd-terraform/blob/main/App/README.md).
+This repository contains the results component only. Vote submission, database provisioning, Kubernetes manifests and the wider AWS EKS platform are maintained elsewhere. The wider platform project documents the surrounding application and delivery workflow in its [application guide](https://github.com/grayburnd/aws-eks-gitops-argocd-terraform/blob/main/App/README.md).
 
 ## Design Decisions
 
@@ -64,7 +64,7 @@ The CI workflows build an Amazon ECR image tagged with the source commit SHA:
 <account>.dkr.ecr.<region>.amazonaws.com/voting-results:<git-sha>
 ```
 
-After a merge to `main`, the CD workflow runs Updatecli and updates `apps/voting-results/prod-values.yml` in the [`frontend-gitops`](https://github.com/YOUR_GITHUB_ORG/frontend-gitops) repository. See the [platform application guide](https://github.com/YOUR_GITHUB_ORG/aws-eks-gitops-argocd-terraform/blob/main/App/README.md) for the wider application workflow and the [frontend GitOps repository](https://github.com/YOUR_GITHUB_ORG/frontend-gitops) for the Kubernetes deployment configuration.
+After a merge to `main`, the CD workflow runs Updatecli and updates `apps/voting-results/prod-values.yml` in the [`frontend-gitops`](https://github.com/grayburnd/frontend-gitops) repository. See the [platform application guide](https://github.com/grayburnd/aws-eks-gitops-argocd-terraform/blob/main/App/README.md) for the wider application workflow and the [frontend GitOps repository](https://github.com/grayburnd/frontend-gitops) for the Kubernetes deployment configuration.
 
 ## Help and Contributions
 
